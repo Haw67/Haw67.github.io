@@ -10,6 +10,3 @@ I love cars
 ![](https://cdn.shopify.com/s/files/1/0246/1483/0160/files/004.jpg?v=1666764360)
 ![](https://images.hdqwalls.com/wallpapers/4k-porsche-911-gt3-rs-zg.jpg)
 
-<iframe width="420" height="315"
-src="https://youtu.be/71sqkgaUncI">
-</iframe>

@@ -1,0 +1,52 @@
+<list>
+    <food>
+        <Name>Macadamia Nut</Name>
+        <Price>8.00</Price>
+        <Calories>204</Calories>
+    </food>
+    <food>
+        <Name>Granola</Name>
+        <Price>10.00</Price>
+        <Calories>597</Calories>
+    </food>
+    <food>
+        <Name>Roasted Chicken</Name>
+        <Price>20.00</Price>
+        <Calories>475</Calories>
+    </food>
+    <food>
+        <Name>Firm Tofu</Name>
+        <Price>12.00</Price>
+        <Calories>363</Calories>
+    </food>
+    <food>
+        <Name>Salmon</Name>
+        <Price>18.00</Price>
+        <Calories>350</Calories>
+    </food>
+    <food>
+        <Name>Avocado</Name>
+        <Price>7.00</Price>
+        <Calories>322</Calories>
+    </food>
+    <food>
+        <Name>Milk</Name>
+        <Price>4.00</Price>
+        <Calories>298</Calories>
+    </food>
+    <food>
+        <Name>Garbanzo Beans</Name>
+        <Price>8.00</Price>
+        <Calories>269</Calories>
+    </food>
+    <food>
+        <Name>Sweet Potato</Name>
+        <Price>5.00</Price>
+        <Calories>258</Calories>
+    </food>
+    <food>
+        <Name>Brown Rice</Name>
+        <Price>3.00</Price>
+        <Calories>248</Calories>
+    </food>
+</list>

@@ -23,7 +23,7 @@
             const foods = xmlDoc.getElementsByTagName ('food');
             const table = document.getElementById ('Foodtable');
              
-            for (let i=0; i<food.length; i++){
+            for (let i=0; i<foods.length; i++){
                 const food = foods[i];
                 const Name = food.getElementsByTagName ('Name')[0].textContent;
                 const Price = food.getElementsByTagName ('Price')[0].textContent;

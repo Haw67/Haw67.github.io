@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Healthy Food Menu</title>
+        <style> th,td {text-align:center;} </style>
+    </head>
+<body bgcolor="white" text="black">
+    <h1 align="center">Healthy Food Menu</h1>
+    <table border="2" align="center" width="50%">
+        <tr>
+            <th width="10%">No.</th>
+            <th width="50%">Name</th>
+            <th width="20%">Price</th>
+            <th width="20%">Calories</th>
+        <tr>
+            <tbody id="Foodtable"></tbody>
+        </table>
+        <script>
+            fetch('Haw Yong Quan_DCS2304082.xml')
+            .then (response => response.text())
+            .then (data =>{
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString (data,'text/xml');
+            const foods = xmlDoc.getElementsByTagName ('food');
+            const table = document.getElementById ('Foodtable');
+             
+            for (let i=0; i<food.length; i++){
+                const food = foods[i];
+                const Name = foods.getElementsByTagName ('Name')[0].textContent;
+                const Price = foods.getElementsByTagName ('Price')[0].textContent;
+                const Calories = foods.getElementsByTagName ('Calories')[0].textContent;
+                const row = table.insertRow(i);
+                const numberCell = row.insertCell(0);
+                const NameCell = row.insertCell(1);
+                const PriceCell = row.inserCell(2);
+                const CaloriesCell = row.insertCell(3);
+                numberCell.innerHTML = i + 1;
+                NameCell.innerHTML = Name;
+                PriceCell.innerHTML = Price;
+                CaloriesCell.innerHTML = Calories;
+             }
+            })
+            .catch(error => console.error(error));
+        </script>
+
+</body>
+</html>

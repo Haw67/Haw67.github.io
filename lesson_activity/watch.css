@@ -286,7 +286,7 @@ body{
   background:linear-gradient (red,orange,yellow);
 }
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width:400px){
   nav ul{
       position: absolute;
       top: 70px;

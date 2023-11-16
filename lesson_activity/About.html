@@ -5,7 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel= icon href=image/logo.jpg type= image/jpg>
-    
+    <script>
+        function bigImg(x){
+            x.style.height="300px";
+            x.style.width="400px";
+        }
+        function normalImg(x){
+            x.style.height="200px";
+            x.style.width="220px";
+        }
+    </script>
 </head>
 
 <body style="background-image: url(image/space.gif);background-repeat: no-repeat;background-size:cover; text-align: center;width: 80%; padding-left: 9%; font-size: 30;">
@@ -21,15 +30,15 @@
 <br><br>
     <section id="service" class="section-p1">
         <div class="fe-box">
-            <img src="image/cus_service.jpg" alt="" width="220px" height="200px">
+            <img src="image/cus_service.jpg" alt="" width="220px" height="200px" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
             <h6 style="color: white;">24/7 Customer Service</h6>
         </div>
         <div class="fe-box">
-            <img src="image/hand.jpeg" alt="" width="220px" height="200px">
+            <img src="image/hand.jpeg" alt="" width="220px" height="200px" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
             <h6 style="color: white;">Free door-to-door transcation</h6>
         </div>
         <div class="fe-box">
-            <img src="image/warranty.jpg" alt="" width="220px" height="200px">
+            <img src="image/warranty.jpg" alt="" width="220px" height="200px" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
             <h6 style="color: white;">2 Years Warranty</h6>
         </div>
     </section>

@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Check Out</title>
+        <link rel= icon href=image/logo.jpg type= image/jpg>
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
+        <script>
+            function showmessage(){
+                alert("Fake Transaction,Alert!!!");
+            }
+        </script>
+
+    </head>
+    <body topmargin="50">
+        <center>
+            <form>
+            <p style="background-color: goldenrod;
+                color:#696969;font-family:verdana;
+                font-size:160%;
+                text-align:center;
+                width:30%;height:80%;">
+
+        <table align="center" width="60%" height="95%">
+            <tr>
+                <td colspan="2" align="center"><font size="5">Personal Details</font></td>
+            </tr>
+
+            <tr>
+                <td width="40%">First Name: </td>
+                <td><input type="text" name="fname"></td>
+            </tr>
+
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="Iname"></td>
+            </tr>
+
+            <tr>
+                <td>Address:</td>
+                <td><textarea rows="4" cols="30" name="address"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>Phone number</td>
+                <td><input type="text" name="pnum"></td>
+            </tr>
+
+            <tr>
+                <td>Payment Method: </td>
+                <td><select>
+                    <option value="0">-List of Payment Method</option>
+                    <option value="visa">Visa</option>
+                    <option value="online">Online Banking</option>
+                    <option value="card">Debit/Credit Card</option>
+                    <option value="cash">Cash On Delivery</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td>Account Number: </td>
+                <td><input type="text" name="anum"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center"><button onclick="showmessage()">Confirm</a></button>
+                <button type="reset" value="reset">Reset</button></td>
+            </tr>
+        </table>
+        </p>
+    </form>
+    </center>
+    </body>
+</html>

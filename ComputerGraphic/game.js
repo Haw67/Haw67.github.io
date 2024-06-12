@@ -182,7 +182,7 @@ function draw() {
       textSize(32);
       text('Your Score: ' + score, width / 2 - 100, height / 2 + 100);
       // Display the restart image
-      image(restartImg, width / 2 - 75, height / 2 + 150, 150, 150, 75); // Adjust position and size as needed
+      image(restartImg, width / 2 - 75, height / 2 + 150, 150, 75); // Adjust position and size as needed
       textSize(32);
       fill(255);
       text('Press R/r to restart', width / 2 - 120, height / 2 + 260);
@@ -237,29 +237,6 @@ function mousePressed() {
 
     // Check if game is over and bee touches the restart image
     if (gameOver && collideRectRect(beeX, beeY, 100, 100, width / 2 - 75, height / 2 + 150, 150, 75)) {
-      endSound.stop(); // Stop the end sound
-      startGame();
-    }
-  }
-}
-
-function touchStarted() {
-  if (!gameStarted) {
-    // Check if the touch is on the start image
-    if (collidePointRect(touchX, touchY, width / 2 - 125, height / 2 + 150, 250, 100)) {
-      gameStarted = true;
-    }
-  } else {
-    // Check if game is in continue state and bee touches the 'go' image
-    if (gameContinue && collidePointRect(touchX, touchY, 0, 90, 150, 75)) {
-      gameContinue = false;
-      sunflowers = [];
-      generateSunflowers();
-      startTimer(); // Restart the timer for the new round
-    }
-
-    // Check if game is over and bee touches the restart image
-    if (gameOver && collidePointRect(touchX, touchY, width / 2 - 75, height / 2 + 150, 150, 75)) {
       endSound.stop(); // Stop the end sound
       startGame();
     }
@@ -334,10 +311,3 @@ function loadHighScore() {
     highScore = parseInt(savedScore);
   }
 }
-
-// Function to check if a point collides with a rectangle
-function collidePointRect(pointX, pointY, rectX, rectY, rectWidth, rectHeight) {
-  return pointX >= rectX && pointX <= rectX + rectWidth && pointY >= rectY && pointY <= rectY + rectHeight;
-}
-
-

@@ -243,6 +243,29 @@ function mousePressed() {
   }
 }
 
+function touchStarted() {
+  if (!gameStarted) {
+    // Check if the touch is on the start image
+    if (collidePointRect(touchX, touchY, width / 2 - 125, height / 2 + 150, 250, 100)) {
+      gameStarted = true;
+    }
+  } else {
+    // Check if game is in continue state and bee touches the 'go' image
+    if (gameContinue && collidePointRect(touchX, touchY, 0, 90, 150, 75)) {
+      gameContinue = false;
+      sunflowers = [];
+      generateSunflowers();
+      startTimer(); // Restart the timer for the new round
+    }
+
+    // Check if game is over and bee touches the restart image
+    if (gameOver && collidePointRect(touchX, touchY, width / 2 - 75, height / 2 + 150, 150, 75)) {
+      endSound.stop(); // Stop the end sound
+      startGame();
+    }
+  }
+}
+
 function keyPressed() {
   // Check if the 'esc' key is pressed
   if (keyCode === ESCAPE) {
@@ -311,3 +334,4 @@ function loadHighScore() {
     highScore = parseInt(savedScore);
   }
 }
+

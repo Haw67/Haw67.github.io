@@ -47,7 +47,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1280,720); // Adjust canvas size to fit the screen
+  createCanvas(1280, 720);
   startGame();
 }
 
@@ -228,43 +228,6 @@ function mousePressed() {
       startGame();
     }
   }
-}
-
-function touchMoved() {
-  // Update the position of the bee image based on touch movement
-  beeX = mouseX - 50;
-  beeY = mouseY - 50;
-
-  // Add the current position to the trajectory
-  trajectory.push({ x: beeX + 50, y: beeY + 50 });
-  if (trajectory.length > MAX_TRAJECTORY_POINTS) {
-    trajectory.shift(); // Remove the oldest position if the array exceeds the limit
-  }
-  return false; // Prevent default
-}
-
-function touchStarted() {
-  if (!gameStarted) {
-    // Check if the touch started on the start image
-    if (collidePointRect(mouseX, mouseY, width / 2 - 125, height / 2 + 150, 250, 100)) {
-      gameStarted = true;
-    }
-  } else {
-    // Check if game is in continue state and bee touches the 'go' image
-    if (gameContinue && collidePointRect(mouseX, mouseY, 0, 90, 150, 75)) {
-      gameContinue = false;
-      sunflowers = [];
-      generateSunflowers();
-      startTimer(); // Restart the timer for the new round
-    }
-
-    // Check if game is over and bee touches the restart image
-    if (gameOver && collidePointRect(mouseX, mouseY, width / 2 - 75, height / 2 + 150, 150, 75)) {
-      endSound.stop(); // Stop the end sound
-      startGame();
-    }
-  }
-  return false; // Prevent default
 }
 
 function keyPressed() {

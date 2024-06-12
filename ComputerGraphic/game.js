@@ -225,6 +225,7 @@ function mousePressed() {
     // Check if the mouse is pressed on the start image
     if (collideRectRect(mouseX, mouseY, 1, 1, width / 2 - 125, height / 2 + 150, 250, 100)) {
       gameStarted = true;
+      startGame(); // Start the timer when the game starts
     }
   } else {
     // Check if game is in continue state and bee touches the 'go' image

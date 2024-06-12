@@ -259,7 +259,7 @@ function touchStarted() {
     }
 
     // Check if game is over and bee touches the restart image
-    if (gameOver && collideRectRect(beeX, beeY, 100, 100, width / 2 - 75, height / 2 + 150, 150, 75)) {
+    if (gameOver && collidePointRect(mouseX, mouseY, width / 2 - 75, height / 2 + 150, 150, 75)) {
       endSound.stop(); // Stop the end sound
       startGame();
     }

@@ -246,12 +246,12 @@ function touchMoved() {
 function touchStarted() {
   if (!gameStarted) {
     // Check if the touch started on the start image
-    if (collideRectRect(mouseX, mouseY, 1, 1, width / 2 - 125, height / 2 + 150, 250, 100)) {
+    if (collidePointRect(mouseX, mouseY, width / 2 - 125, height / 2 + 150, 250, 100)) {
       gameStarted = true;
     }
   } else {
     // Check if game is in continue state and bee touches the 'go' image
-    if (gameContinue && collideRectRect(beeX, beeY, 100, 100, 0, 90, 150, 75)) {
+    if (gameContinue && collidePointRect(mouseX, mouseY, 0, 90, 150, 75)) {
       gameContinue = false;
       sunflowers = [];
       generateSunflowers();

@@ -182,7 +182,7 @@ function draw() {
       textSize(32);
       text('Your Score: ' + score, width / 2 - 100, height / 2 + 100);
       // Display the restart image
-      image(restartImg, width / 2 - 75, height / 2 + 150, 150, 75); // Adjust position and size as needed
+      image(restartImg, width / 2 - 75, height / 2 + 150, 150, 150, 75); // Adjust position and size as needed
       textSize(32);
       fill(255);
       text('Press R/r to restart', width / 2 - 120, height / 2 + 260);
@@ -334,4 +334,10 @@ function loadHighScore() {
     highScore = parseInt(savedScore);
   }
 }
+
+// Function to check if a point collides with a rectangle
+function collidePointRect(pointX, pointY, rectX, rectY, rectWidth, rectHeight) {
+  return pointX >= rectX && pointX <= rectX + rectWidth && pointY >= rectY && pointY <= rectY + rectHeight;
+}
+
 

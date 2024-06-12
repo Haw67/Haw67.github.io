@@ -19,6 +19,7 @@ let startImg; // Variable to hold the start image
 let gameStarted = false; // Variable to track if the game has started
 let titleImg; // Variable to hold the title image
 let bee1Img; // Variable to hold the bee1 image
+let highScore = 0; // Variable to hold the highest score
 
 let timer; // Timer variable
 let timerInterval; // Variable to hold the setInterval reference
@@ -48,6 +49,7 @@ function preload() {
 
 function setup() {
   createCanvas(1280, 720);
+  loadHighScore(); // Load the high score when the game starts
   startGame();
 }
 
@@ -127,6 +129,8 @@ function draw() {
           clearInterval(timerInterval); // Stop the timer
           // Play the end sound
           endSound.play();
+          // Update the high score
+          updateHighScore();
         }
       }
 
@@ -134,6 +138,13 @@ function draw() {
       fill(0);
       textSize(32);
       text('Score: ' + score, 10, 40);
+
+      // Display the highest score
+      fill(0);
+      textSize(24);
+      textAlign(RIGHT);
+      text('High Score: ' + highScore, 400, 40); // Display the highest score
+      textAlign(LEFT);
 
       // Display the timer
       text('Time Left: ' + timer, 1100, 40);
@@ -150,6 +161,8 @@ function draw() {
         clearInterval(timerInterval); // Stop the timer
         // Play the end sound
         endSound.play();
+        // Update the high score
+        updateHighScore();
       }
 
     } else if (gameContinue) {
@@ -276,4 +289,25 @@ function startTimer() {
       clearInterval(timerInterval);
     }
   }, 1000);
+}
+
+// Function to update the high score
+function updateHighScore() {
+  if (score > highScore) {
+    highScore = score;
+    saveHighScore();
+  }
+}
+
+// Function to save the high score to localStorage
+function saveHighScore() {
+  localStorage.setItem('highScore', highScore);
+}
+
+// Function to load the high score from localStorage
+function loadHighScore() {
+  const savedScore = localStorage.getItem('highScore');
+  if (savedScore) {
+    highScore = parseInt(savedScore);
+  }
 }

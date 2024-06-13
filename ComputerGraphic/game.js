@@ -71,8 +71,8 @@ function startGame() {
   }
 
   // Calculate position for bud images
-  budX = [width / 2 - 75, 300, 900, 300, 900];
-  budY = [height / 2 - 75, 450, 450, 200, 200];
+  budX = [width / 2 - 75, 300, 800, 300, 800, 100, 1000];
+  budY = [height / 2 - 25, 500, 500, 200, 200, 350, 350];
   trajectory = []; // Reset trajectory
 }
 
@@ -95,7 +95,7 @@ function generateSunflowers() {
       }
     }
 
-    sunflowers.push({ x: sunflowerX, y: sunflowerY, scored: false });
+    sunflowers.push({ x: sunflowerX, y: sunflowerY, scored: false, showScore: false, scoreTime: 0 });
   }
 }
 
@@ -119,9 +119,20 @@ function draw() {
         // Check for collision between bee and sunflower
         if (!sunflower.scored && collideRectRect(beeX, beeY, 100, 100, sunflower.x + 50, sunflower.y + 50, 20, 20)) {
           sunflower.scored = true;
+          sunflower.showScore = true;
+          sunflower.scoreTime = millis(); // Record the current time
           score += 100;
           // Play the collect sound
           collectSound.play();
+        }
+
+        // Display "+100" if the sunflower was recently scored
+        if (sunflower.showScore && millis() - sunflower.scoreTime < 500) {
+          fill(255,0,0);
+          textSize(32);
+          text('+100', sunflower.x + 50, sunflower.y);
+        } else {
+          sunflower.showScore = false; // Stop showing the score after 1 second
         }
       }
 
@@ -155,7 +166,7 @@ function draw() {
       textAlign(LEFT);
 
       // Display the timer
-      fill(255,0,0);
+      fill(255, 0, 0);
       text('Time Left: ' + timer, 1100, 40);
 
       // Check if all sunflowers are scored
@@ -178,7 +189,7 @@ function draw() {
       // Draw the 'go' image for continuation
       image(goImg, 0, 90, 150, 75);
       // Display the message to continue
-      fill(random(255),random(255),random(255));
+      fill(random(255), random(255), random(255));
       textSize(32);
       text('Press C/c to continue next round', 540, 40);
     } else if (gameOver) {
@@ -209,7 +220,11 @@ function draw() {
     image(bee1Img, 420, 520, 200, 150);
     fill(0);
     textSize(32);
-    text('By D.Haw',1025,150);
+    text('By D.Haw', 1025, 150);
+    // Display the instruction to press 'S' to start
+    fill(random(255),0,random(255));
+    textSize(48);
+    text('Press S/s to start', width / 2 -175, height / 2 +100);
   }
 }
 
@@ -294,6 +309,14 @@ function keyPressed() {
       if (!bgMusic.isPlaying()) {
         bgMusic.loop(); // Resume the background music for the new round
       }
+    }
+  }
+
+  // Check if the 'S' key is pressed to start the game
+  if (key === 'S' || key === 's') {
+    if (!gameStarted) {
+      gameStarted = true;
+      startGame(); // Start the game
     }
   }
 }

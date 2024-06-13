@@ -71,8 +71,8 @@ function startGame() {
   }
 
   // Calculate position for bud images
-  budX = [width / 2 - 75, 300, 900];
-  budY = [height / 2 - 75, 450, 450];
+  budX = [width / 2 - 75, 300, 900, 300, 900];
+  budY = [height / 2 - 75, 450, 450, 200, 200];
   trajectory = []; // Reset trajectory
 }
 

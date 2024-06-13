@@ -20,6 +20,7 @@ let gameStarted = false; // Variable to track if the game has started
 let titleImg; // Variable to hold the title image
 let bee1Img; // Variable to hold the bee1 image
 let highScore = 0; // Variable to hold the highest score
+let bgMusic;
 
 let timer; // Timer variable
 let timerInterval; // Variable to hold the setInterval reference
@@ -33,7 +34,7 @@ function preload() {
   // Load images
   beeImg = loadImage('bee.gif');
   sunflowerImg = loadImage('sunflower.gif');
-  budImg = loadImage('bud.gif');
+  budImg = loadImage('toothless.gif');
   backgroundImg = loadImage('background.jpg');
   goImg = loadImage('go.png');
   restartImg = loadImage('restart.png');
@@ -45,6 +46,7 @@ function preload() {
   // Load sounds
   endSound = loadSound('end.mp4');
   collectSound = loadSound('collect.mp3');
+  bgMusic = loadSound('toothless.mp3');
 }
 
 function setup() {
@@ -62,6 +64,12 @@ function startGame() {
   clearInterval(timerInterval); // Clear any existing timer
   generateSunflowers();
   startTimer(); // Start the timer
+
+  // Play background music
+  if (!bgMusic.isPlaying()) {
+    bgMusic.loop(); // Loop the background music
+  }
+
   // Calculate position for bud images
   budX = [width / 2 - 75, 300, 900];
   budY = [height / 2 - 75, 450, 450];
@@ -173,6 +181,8 @@ function draw() {
       textSize(32);
       text('Press C/c to continue', 580, 40);
     } else if (gameOver) {
+      // Stop background music
+      bgMusic.stop();
       // Draw black background
       background(0);
       // Display the game over image
@@ -252,16 +262,21 @@ function keyPressed() {
         // Pause the game
         gameStarted = false;
         clearInterval(timerInterval); // Stop the timer when the game is paused
+        bgMusic.stop(); // Stop the background music when the game is paused
       } else if (gameOver || gameContinue) {
         // Resume the game
         gameStarted = true;
         startTimer(); // Restart the timer when the game is resumed
+        if (!bgMusic.isPlaying()) {
+          bgMusic.loop(); // Resume the background music when the game is resumed
+        }
       }
     }
   }
 
   // Check if the 'R' key is pressed
   if (key === 'R' || key === 'r') {
+    endSound.stop();
     startGame(); // Restart the game
   }
 
@@ -272,6 +287,9 @@ function keyPressed() {
       sunflowers = [];
       generateSunflowers();
       startTimer(); // Restart the timer for the new round
+      if (!bgMusic.isPlaying()) {
+        bgMusic.loop(); // Resume the background music for the new round
+      }
     }
   }
 }

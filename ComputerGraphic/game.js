@@ -149,12 +149,13 @@ function draw() {
 
       // Display the highest score
       fill(0);
-      textSize(24);
+      textSize(32);
       textAlign(RIGHT);
-      text('High Score: ' + highScore, 400, 40); // Display the highest score
+      text('High Score: ' + highScore, 500, 40); // Display the highest score
       textAlign(LEFT);
 
       // Display the timer
+      fill(255,0,0);
       text('Time Left: ' + timer, 1100, 40);
 
       // Check if all sunflowers are scored
@@ -177,9 +178,9 @@ function draw() {
       // Draw the 'go' image for continuation
       image(goImg, 0, 90, 150, 75);
       // Display the message to continue
-      fill(0);
+      fill(random(255),random(255),random(255));
       textSize(32);
-      text('Press C/c to continue', 580, 40);
+      text('Press C/c to continue next round', 540, 40);
     } else if (gameOver) {
       // Stop background music
       bgMusic.stop();
@@ -206,6 +207,9 @@ function draw() {
     image(startImg, width / 2 - 125, height / 2 + 150, 250, 100);
     // Display the bee1 image
     image(bee1Img, 420, 520, 200, 150);
+    fill(0);
+    textSize(32);
+    text('By D.Haw',1025,150);
   }
 }
 

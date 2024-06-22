@@ -31,7 +31,6 @@ const MAX_TRAJECTORY_POINTS = 30;
 let trajectory = []; 
 
 function preload() {
-  // Load images
   beeImg = loadImage('bee.gif');
   sunflowerImg = loadImage('sunflower.gif');
   budImg = loadImage('toothless.gif');
@@ -43,7 +42,6 @@ function preload() {
   titleImg = loadImage('title.png'); 
   bee1Img = loadImage('bee1.png'); 
   
-  // Load sounds
   endSound = loadSound('end.mp4');
   collectSound = loadSound('collect.mp3');
   bgMusic = loadSound('music.mp3');

@@ -46,7 +46,7 @@ function preload() {
   // Load sounds
   endSound = loadSound('end.mp4');
   collectSound = loadSound('collect.mp3');
-  bgMusic = loadSound('toothless.mp3');
+  bgMusic = loadSound('music.mp3');
 }
 
 function setup() {

@@ -56,9 +56,10 @@ const moveDistance = 30;
 const moveDuration = 1000; 
 const waitTimeRight = 3000; 
 const waitTimeLeft = 2000;
-let imgScale = 0; 
-let targetScale = 1.0; 
-let scaleSpeed = 0.01; 
+let imgScale = 0.75; 
+let targetScale = 1.25; 
+let scaleSpeed = 0.01;
+let isScalingUp = true; 
 
 function setup(){
     createCanvas(1280,720);
@@ -108,8 +109,17 @@ function preload() {
 }
 
 function scaleImage() {
-    imgScale = lerp(imgScale, targetScale, scaleSpeed); 
-    imgScale = constrain(imgScale, 0.1, 10); 
+    if (isScalingUp) {
+        imgScale += scaleSpeed;
+        if (imgScale >= targetScale) {
+            isScalingUp = false;
+        }
+    } else {
+        imgScale -= scaleSpeed;
+        if (imgScale <= 0.75) { 
+            isScalingUp = true;
+        }
+    }
     scale(imgScale); 
 }
 

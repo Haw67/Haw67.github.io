@@ -33,7 +33,7 @@ let trajectory = [];
 function preload() {
   beeImg = loadImage('bee.gif');
   sunflowerImg = loadImage('sunflower.gif');
-  budImg = loadImage('toothless.gif');
+  budImg = loadImage('insect.png');
   backgroundImg = loadImage('background.jpg');
   goImg = loadImage('go.png');
   restartImg = loadImage('restart.png');

@@ -33,7 +33,7 @@ let trajectory = [];
 function preload() {
   beeImg = loadImage('bee.gif');
   sunflowerImg = loadImage('sunflower.gif');
-  budImg = loadImage('insect.png');
+  budImg = loadImage('toothless.gif');
   backgroundImg = loadImage('background.jpg');
   goImg = loadImage('go.png');
   restartImg = loadImage('restart.png');
@@ -44,7 +44,7 @@ function preload() {
   
   endSound = loadSound('end.mp4');
   collectSound = loadSound('collect.mp3');
-  bgMusic = loadSound('music.mp3');
+  bgMusic = loadSound('toothless.mp3');
 }
 
 function setup() {

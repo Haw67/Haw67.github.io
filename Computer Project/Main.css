@@ -77,7 +77,7 @@ body {
 }
 
 #home{
-  background-image: url(image/background.jpg);
+  background-image: url(Image/background.jpg);
   height: 85vh;
   width: 100%;
   background-size: cover;

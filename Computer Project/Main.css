@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Spartan',sans-serif;
+}
+
+/* body{
+  width:100%;
+} */
+
+body {
+  background: linear-gradient(135deg,#66a6ff, #89f7fe );
+  color: black;
+}
+ 
+#header{
+  display:flexbox;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  background: lightblue;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+#header h1{
+  font-size: 28;
+  padding:10px 20px;
+  color:orange;
+}
+  
+#navbar{
+  display: flex;
+  align-items:center;
+  justify-content: right;
+}
+  
+#navbar li{
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+  
+#navbar li a{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  transition: 0.2s ease;
+}
+  
+#navbar li a:hover,
+#navbar li a.active{
+  color:floralwhite;
+}
+  
+#navbar li a.active::after,
+#navbar li a:hover::after{
+  content:"";
+  width: 50%;
+  height: 2px;
+  background:blueviolet;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+#navbar li a{
+  font-style: oblique;
+  font-weight: 900;
+  font-size: 20;
+}
+
+#home{
+  background-image: url(Image/background.jpg);
+  height: 85vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 60% right 0;
+}
+
+#content table {
+  /* border:1px solid black; */
+  margin:0% 10%;
+}
+
+#content p{
+  font-size: 20;
+  font-weight: 500;
+  padding-left: 5%;
+  text-align: justify;
+}
+
+#feature table,tr, td {
+  border:1px solid black;
+  border-spacing: 0px;
+  margin:0% 15%;
+}
+#feature td{
+  padding-left: 30px;
+  padding-top: 9px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
+#video{
+  display: flex;
+    justify-content: center;
+}
+
+.footerbottom {
+  text-align: center;
+  padding: 20px;
+}
+
+.footerbottom p{
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+#about{
+  margin: 0% 45%;
+}
+
+
+#about:hover {
+  transform: scale(1.25); /* Slightly enlarges button */
+}
+
+
+.slogan{
+  margin:10% 20%; 
+  font-size: 60; 
+  width:80%; 
+  height: 20%;
+}
+
+.slogan {
+  background-image: linear-gradient(45deg, #ff6ec4, #7873f5, #66a6ff, #6effa3);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorAnimation 4s infinite linear;
+}
+
+@keyframes colorAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

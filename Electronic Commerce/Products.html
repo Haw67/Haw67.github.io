@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printlio - Products</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body id="product-page">
+    
+    <h2>Our Products</h2>
+
+    <section class="product-gallery">
+
+        <div class="product-item">
+            <img src="image/businesscard.jpg" alt="Business Card">
+            <h3>Business Cards</h3>
+            <p>High quality custom cards starting at $3</p>
+            <button class="add-to-cart" data-id="1" data-name="Business Cards" data-price="3" data-image="image/businesscard.jpg">Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="image/flyer.jpg" alt="Flyer">
+            <h3>Flyers</h3>
+            <p>Eye-catching flyers for promotions and events</p>
+            <button class="add-to-cart" data-id="2" data-name="Flyers" data-price="4" data-image="image/flyer.jpg">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="image/brochure.jpg" alt="Brochure">
+            <h3>Brochures</h3>
+            <p>Folded marketing materials for business and more</p>
+            <button class="add-to-cart" data-id="3" data-name="Brochures" data-price="8" data-image="image/brochure.jpg">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="image/poster.jpg" alt="Poster">
+            <h3>Posters</h3>
+            <p>Custom large-scale posters for events or ads</p>
+            <button class="add-to-cart" data-id="4" data-name="Posters" data-price="5" data-image="image/poster.jpg">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="image/tshirt.jpg" alt="T-Shirt Printing">
+            <h3>Custom T-Shirts</h3>
+            <p>Print your own designs on quality cotton shirts</p>
+            <button class="add-to-cart" data-id="5" data-name="T-Shirts" data-price="30" data-image="image/tshirt.jpg">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="image/mug.jpg" alt="Mug Printing">
+            <h3>Printed Mugs</h3>
+            <p>Personalized mugs for gifts, business, or fun</p>
+            <button class="add-to-cart" data-id="6" data-name="Mugs" data-price="15" data-image="image/mug.jpg">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="image/calendar.jpg" alt="Calendar Printing">
+            <h3>Calendars</h3>
+            <p>Custom wall or desk calendars for your brand</p>
+            <button class="add-to-cart" data-id="7" data-name="Calendars" data-price="12" data-image="image/calendar.jpg">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="image/menu.jpg" alt="Restaurant Menu">
+            <h3>Restaurant Menus</h3>
+            <p>Durable, vibrant menus for dine-in or takeout</p>
+            <button class="add-to-cart" data-id="8" data-name="Menus" data-price="20" data-image="image/menu.jpg">Add to Cart</button>
+        </div>
+    </section>
+    
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.add-to-cart');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+        const name = btn.getAttribute('data-name');
+        const price = parseFloat(btn.getAttribute('data-price'));
+        const image = btn.getAttribute('data-image');
+
+        const product = { id, name, price, quantity: 1, image };
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const existing = cart.find(item => item.id === id);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push(product);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

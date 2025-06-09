@@ -1,0 +1,514 @@
+body, html {
+  margin: 0; padding: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+}
+.sidebar {
+  width: 220px;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  margin: 15px 0;
+}
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.sidebar a:hover {
+  color: black;
+}
+#logout {
+  margin-top: 30px;
+  background: #ff4d4d;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+main {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 30px;
+  overflow-y: auto;
+}
+.view {
+  /* common styles for each section */
+}
+
+/* Section Styling */
+#employees {
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  margin: 20px;
+}
+
+/* Heading */
+#employees h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Add Button Container */
+.employee-actions {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+/* Table Styling */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.employee-table th, .employee-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.employee-table th {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.employee-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Form Styling */
+.employee-form {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.employee-form h3 {
+  margin-top: 0;
+  color: #444;
+}
+
+.employee-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.btn-primary, .btn-success, .btn-cancel {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}
+
+/* Performance Management Section Styling */
+#performance {
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  margin: 20px;
+}
+
+/* Headings */
+#performance h2, 
+#performance h3 {
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+#performance h2 {
+  font-size: 24px;
+}
+
+/* Forms Styling */
+#performance form {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+#performance form input,
+#performance form select,
+#performance form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  flex-grow: 1;
+  min-width: 180px;
+  font-family: inherit;
+}
+
+#performance form textarea {
+  flex-grow: 2;
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Submit Buttons */
+#performance form button {
+  padding: 10px 18px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 100px;
+}
+
+#performance form button:hover {
+  background-color: #218838;
+}
+
+/* Tables */
+#performance table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+#performance th, 
+#performance td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+#performance th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+#performance tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Action Buttons in Table */
+#performance tbody button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: background-color 0.25s ease;
+}
+
+#performance tbody button.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+#performance tbody button.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Responsive layout for forms */
+@media (max-width: 600px) {
+  #performance form {
+    flex-direction: column;
+  }
+
+  #performance form button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* === General Layout for Employee Self-Service === */
+#selfservice {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  font-family: Arial, sans-serif;
+}
+
+/* Headings */
+#selfservice h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+#selfservice h3 {
+  color: #34495e;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+/* Forms */
+#selfservice form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+#selfservice input,
+#selfservice select,
+#selfservice textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#selfservice button {
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+#selfservice button:hover {
+  background-color: #2980b9;
+}
+
+/* Table Styling */
+#selfservice table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+
+#selfservice th,
+#selfservice td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+#selfservice th {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+#selfservice td button {
+  background-color: #e74c3c;
+  padding: 5px 12px;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+#selfservice td button:hover {
+  background-color: #c0392b;
+}
+
+.announcement-board {
+  margin-top: 20px;
+  border-top: 2px solid #ccc;
+  padding-top: 10px;
+}
+
+.announcement-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.announcement-item h4 {
+  margin: 0 0 10px;
+}
+
+.announcement-item p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.announcement-item {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.announcement-actions {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.announcement-actions button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.announcement-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* General Responsive Layout */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  /* Make tables scrollable */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table-responsive table {
+    min-width: 700px;
+  }
+
+  /* Form fields take full width */
+  form {
+    flex-direction: column !important;
+  }
+
+  form input,
+  form select,
+  form textarea {
+    width: 100% !important;
+  }
+
+  /* Buttons expand on small screens */
+  button,
+  .btn-primary,
+  .btn-success,
+  .btn-cancel {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .employee-actions {
+    text-align: center;
+  }
+
+  .announcement-actions {
+    position: static;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2, h3 {
+    font-size: 20px;
+  }
+
+  .sidebar h2 {
+    font-size: 18px;
+  }
+
+  #selfservice,
+  #employees,
+  #performance {
+    padding: 20px 15px;
+    margin: 10px;
+  }
+}

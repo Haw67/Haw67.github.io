@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Logout redirection
     logout.addEventListener('click', () => {
-      window.location.href = 'hr-portal.html';
+      window.location.href = 'HR-portal.html';
     });
   
     // INITIAL RENDER OF EMPLOYEES

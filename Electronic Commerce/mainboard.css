@@ -1,0 +1,652 @@
+body, html {
+  margin: 0; padding: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+}
+
+/* Adjust wrapper to leave space for fixed sidebar */
+.wrapper {
+  margin-left: 220px; /* Leave space for sidebar */
+  height: 100vh;
+  overflow-y: auto; /* Scroll only the content area */
+  display: block;    /* Remove flex so content can scroll */
+}
+
+.sidebar {
+  position: fixed;  /* Fix sidebar position */
+  top: 0;
+  left: 0;
+  height: 100vh;    /* Full viewport height */
+  overflow-y: auto; /* Scroll if sidebar content overflows */
+  width: 220px;     /* same width as before */
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 100;     /* keep it on top */
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.sidebar a.active {
+  color: #000;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.sidebar {
+  scroll-behavior: smooth;
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  margin: 15px 0;
+}
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.sidebar a:hover {
+  color: black;
+}
+#logout {
+  margin-top: 30px;
+  background: #ff4d4d;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#Registration {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+}
+
+.registration-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form Styling */
+.supplier-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.supplier-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.supplier-form button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4e73df;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.supplier-form button:hover {
+  background-color: #375ab7;
+}
+
+/* Search Box */
+#searchInput {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Table Styling */
+.supplier-table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.supplier-table th, .supplier-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.supplier-table th {
+  background-color: #4e73df;
+  color: white;
+}
+
+.supplier-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.supplier-table button {
+  padding: 6px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.supplier-table button:hover {
+  background-color: #cc0000;
+}
+
+.supplier-table button.btn-edit {
+  background-color: #28a745;
+}
+
+.supplier-table button.btn-edit:hover {
+  background-color: #1e7e34;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+.table-container table {
+  width: 100%;
+  min-width: 600px; /* ensures horizontal scroll appears when needed */
+  border-collapse: collapse;
+}
+
+#Order {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+}
+
+.order-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Order Form Styling */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.order-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.order-form button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4e73df;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.order-form button:hover {
+  background-color: #375ab7;
+}
+
+/* Table Styling */
+.order-table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.order-table th, .order-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.order-table th {
+  background-color: #4e73df;
+  color: white;
+}
+
+.order-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.order-table button {
+  padding: 6px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.order-table button:hover {
+  background-color: #cc0000;
+}
+
+.order-table button.btn-edit {
+  background-color: #28a745;
+}
+
+.order-table button.btn-edit:hover {
+  background-color: #1e7e34;
+}
+
+#orderSearchInput {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#Contract {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+}
+
+.contract-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contract Form Styling (matched with order-form) */
+.contract-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.contract-form input,
+.contract-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.contract-form button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4e73df;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contract-form button:hover {
+  background-color: #375ab7;
+}
+
+/* Contract Table Styling (matched with order-table) */
+.contract-table-container {
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.contract-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contract-table th, .contract-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.contract-table th {
+  background-color: #4e73df;
+  color: white;
+}
+
+.contract-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.contract-table button {
+  padding: 6px 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  margin: 0 3px;
+}
+
+.contract-table .btn-edit {
+  background-color: #28a745;
+}
+.contract-table .btn-edit:hover {
+  background-color: #1e7e34;
+}
+
+.contract-table .btn-delete {
+  background-color: #dc3545;
+}
+.contract-table .btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Contract List Heading */
+#Contract h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Contract Search Bar - same style as order */
+#contractSearch {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px; /* space below search input */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block; /* force input to behave like a block element */
+}
+
+/* Full page container */
+#Communication {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+
+#Communication h2{
+  padding: 0% 40%;
+}
+
+/* Main container centers content and limits width */
+.comm-container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* for responsiveness */
+}
+
+/* Form card */
+.comm-card {
+  flex: 1 1 400px; /* grow, shrink, base width */
+  background-color: #ffffff;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.comm-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.comm-card h3 {
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  color: #2e3a59;
+  border-left: 6px solid #4e73df;
+  padding-left: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Inputs and textarea */
+.comm-card input,
+.comm-card textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1.8px solid #d1d7e0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+  font-family: inherit;
+  color: #444;
+  resize: vertical;
+}
+
+.comm-card input:focus,
+.comm-card textarea:focus {
+  border-color: #4e73df;
+  outline: none;
+  box-shadow: 0 0 8px rgba(78, 115, 223, 0.3);
+}
+
+.comm-card textarea {
+  min-height: 140px;
+  line-height: 1.5;
+}
+
+/* Submit button */
+.comm-card button {
+  background-color: #4e73df;
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(78, 115, 223, 0.5);
+}
+
+.comm-card button:hover {
+  background-color: #375ab7;
+  box-shadow: 0 6px 16px rgba(55, 90, 183, 0.6);
+}
+
+/* Announcement list container */
+.announcement-list {
+  flex: 1 1 400px;
+  background-color: #fafbff;
+  border: 1px solid #e3e9f1;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 8px rgba(78, 115, 223, 0.07);
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 20px 25px;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+/* Individual announcements */
+.announcement-list li {
+  position: relative;
+  background: white;
+  padding: 16px 22px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  font-size: 15px;
+  line-height: 1.4;
+  transition: background-color 0.25s ease;
+}
+
+.announcement-list li:hover {
+  background-color: #f0f4ff;
+}
+
+.announcement-list li::before {
+  content: "📢";
+  margin-right: 10px;
+  font-size: 18px;
+  color: #4e73df;
+}
+
+.announcement-list strong {
+  color: #4e73df;
+  font-weight: 700;
+}
+
+/* Button group container to align buttons side by side */
+.btn-group {
+  display: flex;
+  gap: 8px; /* spacing between buttons */
+  margin-top: 8px;
+}
+
+/* Delete button styling */
+.announcement-list .delete-btn {
+  position: relative; /* remove absolute positioning */
+  background: #dc3545;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 8px rgba(220, 53, 69, 0.5);
+}
+
+.announcement-list .delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Edit button styling */
+.announcement-list .edit-btn {
+  background: #28a745;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(78, 115, 223, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.announcement-list .edit-btn:hover {
+  background-color: #1e7e34;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .comm-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .comm-card,
+  .announcement-list {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .announcement-list {
+    max-height: 400px;
+  }
+}

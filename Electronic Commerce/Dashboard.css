@@ -121,6 +121,10 @@ main {
   border-radius: 6px;
 }
 
+.group img {
+    margin-left: 90px;
+  }
+
 /* Buttons */
 .btn-primary, .btn-success, .btn-cancel {
   padding: 8px 16px;

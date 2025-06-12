@@ -123,8 +123,8 @@ main {
 
 .group {
   width: 100%;
-  max-width: 600px; /* Optional: limit container width */
-  margin: auto; /* Center the container */
+  max-width: 900px;
+  margin: auto; 
 }
 
 .group img {

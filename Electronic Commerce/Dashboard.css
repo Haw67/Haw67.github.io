@@ -121,8 +121,16 @@ main {
   border-radius: 6px;
 }
 
-.group img {
-    margin-left: 90px;
+.group {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto; 
+  }
+
+  .group img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
 /* Buttons */

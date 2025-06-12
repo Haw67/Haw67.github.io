@@ -121,7 +121,13 @@ main {
   border-radius: 6px;
 }
 
-.group img {
+.group {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto; 
+}
+
+.group image {
   width: 100%;
   height: auto;
   display: block;

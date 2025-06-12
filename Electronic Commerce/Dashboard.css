@@ -122,16 +122,16 @@ main {
 }
 
 .group {
-    width: 100%;
-    max-width: 1000px;
-    margin: auto; 
-  }
+  width: 100%;
+  max-width: 1000px;
+  margin: auto; 
+}
 
-  .group img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+.group img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* Buttons */
 .btn-primary, .btn-success, .btn-cancel {

@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <td>${emp.name}</td>
         <td>${emp.dept}</td>
         <td>
-          <button onclick="editEmployee(${emp.id})">Edit</button>
-          <button onclick="deleteEmployee(${emp.id})">Delete</button>
+          <button class="edit-btn" onclick="editEmployee(${emp.id})">Edit</button>
+          <button class="delete-btn" onclick="deleteEmployee(${emp.id})">Delete</button>
         </td>`;
       tbody.appendChild(row);
     });
@@ -169,7 +169,7 @@ function renderGoals() {
       <td>${g.due}</td>
       <td>${g.status}</td>
       <td>
-        <button onclick="deleteGoal(${index})">Delete</button>
+        <button class="delete-btn" onclick="deleteGoal(${index})">Delete</button>
       </td>
     `;
     list.appendChild(row);
@@ -219,7 +219,7 @@ function renderReviews() {
       <td>${r.rating}</td>
       <td>${r.comment}</td>
       <td>
-        <button onclick="deleteReview(${index})">Delete</button>
+        <button class="delete-btn" onclick="deleteReview(${index})">Delete</button>
       </td>
     `;
     list.appendChild(row);
@@ -357,7 +357,7 @@ function renderAnnouncements() {
       <p>${a.body}</p>
       <div class="announcement-actions">
     <button onclick="editAnnouncement(${index})">Edit</button>
-    <button onclick="deleteAnnouncement(${index})">Delete</button>
+    <button class="delete-btn" onclick="deleteAnnouncement(${index})">Delete</button>
       </div>
     `;
     board.appendChild(item);

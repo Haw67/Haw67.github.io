@@ -76,6 +76,11 @@ body, html {
   border-radius: 4px;
 }
 
+#logout:hover{
+  transform: scale(1.10);
+  background: #c82333;
+}
+
 #Registration {
   flex: 1;
   padding: 30px;

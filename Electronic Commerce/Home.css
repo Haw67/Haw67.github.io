@@ -142,10 +142,59 @@ section {
   color: #333;
 }
 .about p {
-  max-width: 800px;
+  max-width: 900px;
   margin: 20px auto;
   color: #666;
   line-height: 1.6;
+}
+
+/* Value Proposition List */
+.about p {
+  max-width: 900px;
+  margin: 0 auto 16px auto;
+  color: #444;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.model-item p {
+  margin-bottom: 16px;
+  color: #444;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.market-strategy {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 0;
+  color: #444;
+}
+
+.market-strategy h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.market-strategy h3 {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-top: 30px;
+}
+
+.market-strategy p {
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-size: 1rem;
 }
 
 /* Product Grid */
